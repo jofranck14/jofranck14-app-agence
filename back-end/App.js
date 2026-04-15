@@ -61,10 +61,13 @@ process.on('unhandledRejection', (reason, promise) => {
     console.error('Unhandled Rejection at:', promise, 'reason:', reason);
 });
 
+app.get("/", (req, res) => {
+  res.send("API OK + MYSQL CONNECTED");
+});
+
 // Démarrer le serveur
-app.listen(port, () => {
-    console.log(`====================================================`);
-    console.log(`🚀 Serveur démarré sur : http://localhost:${port}`);
-    console.log(`🔐 Routes Auth prêtes sur : http://localhost:${port}/auth/login`);
-    console.log(`====================================================`);
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log("Server running");
+
 });
