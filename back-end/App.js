@@ -64,7 +64,10 @@ process.on('unhandledRejection', (reason, promise) => {
 app.get("/", (req, res) => {
   res.send("API OK + MYSQL CONNECTED");
 });
-
+app.get("/test-db", async (req, res) => {
+    const [result] = await pool.query("SELECT 1");
+    res.json(result);
+});
 // Démarrer le serveur
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
