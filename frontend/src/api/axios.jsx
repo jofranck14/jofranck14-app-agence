@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-    baseURL: 'http://localhost:3000', // Remplace par ton port backend
+    baseURL: 'https://jofranck14-app-agence-production.up.railway.app/', // Remplace par ton port backend
 });
 
 // Ce code ajoute le token automatiquement dans le header avant chaque requête
